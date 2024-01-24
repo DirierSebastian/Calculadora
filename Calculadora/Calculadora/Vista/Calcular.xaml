@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calculadora.Triggers.Tcalculadora"
+             x:Class="Calculadora.Vista.Calcular"
+             BackgroundColor="black">
+
+    <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,.32" AbsoluteLayout.LayoutFlags="All"
+                     Padding="24,0" Spacing="0" HorizontalOptions="End" VerticalOptions="End">
+                <Label Padding="8,0" HorizontalOptions="End">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span x:Name="spnPrimero"  Text="{Binding spnPrimero}" FontSize="30" TextColor="White"/>
+                                <Span x:Name="spnSegundo"  Text="{Binding spnSegundo}" FontSize="28" TextColor="#d86d6f"/>
+                                <Span x:Name="spnTercero"  Text="{Binding spnTercero}" FontSize="30" TextColor="White"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label x:Name="lblNumero" HorizontalOptions="End" Text="{Binding lblNumero}" TextColor="White"
+                   Margin="0,0,16,0" FontSize="74" FontAttributes="Bold"/>
+            </StackLayout>
+            <Frame AbsoluteLayout.LayoutBounds="0,1,1,.1" AbsoluteLayout.LayoutFlags="SizeProportional,YProportional"
+               BackgroundColor="Black"/>
+            <Frame AbsoluteLayout.LayoutBounds="0,.95,1,.65" AbsoluteLayout.LayoutFlags="SizeProportional,YProportional"
+               BackgroundColor="#1F1E1E" HasShadow="False">
+                <Grid AbsoluteLayout.LayoutBounds="0,1,1,.62" AbsoluteLayout.LayoutFlags="SizeProportional,YProportional"
+                  RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" Padding="10" RowSpacing="4"
+                  ColumnSpacing="4">
+                    <Frame Grid.Column="0" Grid.Row="0" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                    <Button TextColor="#37ae9a" FontSize="38" VerticalOptions="Fill" Text="/"
+                            BackgroundColor="#1F1E1E" x:Name="dividir" Command="{Binding Btn_DividirCommand}">
+                        <Button.Behaviors>
+                            <local:Tboton/>
+                        </Button.Behaviors>
+                    </Button>
+                </Frame>
+                    <Frame Grid.Column="1" Grid.Row="0" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="#37ae9a" FontSize="25" VerticalOptions="Fill" Text="AC"
+                            Background="#1F1E1E" Command="{Binding Btn_ACCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="2" Grid.Row="0" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="#37ae9a" FontSize="25" VerticalOptions="Fill" Text="C"
+                            Background="#1F1E1E" Command="{Binding Click_CCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="3" Grid.Row="0" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="38" VerticalOptions="Fill" Text="#"
+                            Background="#1F1E1E"/>
+                    </Frame>
+                    <Frame Grid.Column="0" Grid.Row="1" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="7"
+                            Background="#1F1E1E" Command="{Binding Click_SieteCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="1" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="8"
+                            Background="#1F1E1E" Command="{Binding Click_OchoCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="2" Grid.Row="1" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="9"
+                            Background="#1F1E1E" Command="{Binding Click_NueveCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="3" Grid.Row="1" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="#37ae9a" FontSize="38" Padding="2,0,0,8" VerticalOptions="Fill" TextTransform="None" Text="x"
+                            BackgroundColor="#1F1E1E" Command="{Binding Btn_PorCommand}">
+                        <Button.Behaviors>
+                            <local:Tboton/>
+                        </Button.Behaviors>
+                    </Button>
+                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="2" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="4"
+                            Background="#1F1E1E" Command="{Binding Click_CuatroCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="2" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="5"
+                            Background="#1F1E1E" Command="{Binding Click_CincoCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="2" Grid.Row="2" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="6"
+                            Background="#1F1E1E" Command="{Binding Click_SeisCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="3" Grid.Row="2" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="#37ae9a" Padding="4,0,0,4" FontSize="38" VerticalOptions="Fill" Text="-"
+                            BackgroundColor="#1F1E1E" Command="{Binding Btn_RestarCommand}">
+                        <Button.Behaviors>
+                            <local:Tboton/>
+                        </Button.Behaviors>
+                    </Button>
+                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="3" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="1"
+                            Background="#1F1E1E" Command="{Binding Click_UnoCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="3" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="2"
+                            Background="#1F1E1E" Command="{Binding Click_DosCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="2" Grid.Row="3" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="3"
+                            Background="#1F1E1E" Command="{Binding Click_TresCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="3" Grid.Row="3" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="#37ae9a" FontSize="38" VerticalOptions="Fill" Text="+"
+                            BackgroundColor="#1F1E1E" Command="{Binding Btn_SumarCommand}">
+                        <Button.Behaviors>
+                            <local:Tboton/>
+                        </Button.Behaviors>
+                    </Button>
+                </Frame>
+                    <Frame Grid.ColumnSpan="2" Grid.Row="4" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="White" FontSize="28" VerticalOptions="Fill" Text="0"
+                            Background="#1F1E1E" Command="{Binding Click_CeroCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="2" Grid.Row="4" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="white" FontSize="38" VerticalOptions="Fill" Text="."
+                            Background="#1F1E1E" Command="{Binding Click_PuntoCommand}"/>
+                    </Frame>
+                    <Frame Grid.Column="3" Grid.Row="4" Padding="0" Margin="12" CornerRadius="12" BackgroundColor="#282b33">
+                        <Button TextColor="white" FontSize="38" VerticalOptions="Fill" Text="="
+                            Background="#1F1E1E" Command="{Binding Btn_IgualCommand}"/>
+                    </Frame>
+                </Grid>
+            </Frame>
+        </AbsoluteLayout>
+</ContentPage>
