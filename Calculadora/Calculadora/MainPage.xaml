@@ -11,9 +11,9 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
-                            <Span x:Name="spnPrimero" Text="" FontSize="30" TextColor="White"/>
-                            <Span x:Name="spnSegundo" Text="" FontSize="28" TextColor="#d86d6f"/>
-                            <Span x:Name="spnTercero" Text="" FontSize="30" TextColor="White"/>
+                            <Span x:Name="spnPrimero"  Text="" FontSize="30" TextColor="White"/>
+                            <Span x:Name="spnSegundo"  Text="" FontSize="28" TextColor="#d86d6f"/>
+                            <Span x:Name="spnTercero"  Text="" FontSize="30" TextColor="White"/>
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
